@@ -1,12 +1,17 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import Overview from "../Pages/Overview";
-import Live from "../Pages/Live";
 
-const Wrap = () => {
+const Wrap = ({ data }) => {
   return (
     <>
       <h1>work</h1>
+      <div className="content">
+        {data.err ? null : (
+          <>
+            <img src={data.img} alt="" />
+            <h2>{data.name}</h2>
+          </>
+        )}
+      </div>
     </>
   );
 };

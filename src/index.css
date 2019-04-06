@@ -6,3 +6,9 @@
 body {
   height: 100vh;
 }
+h1,
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Raleway", sans-serif;
+}

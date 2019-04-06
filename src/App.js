@@ -6,7 +6,8 @@ import "./App.css";
 class App extends Component {
   state = {
     value: "",
-    isFounded: false
+    isFounded: false,
+    err: true
   };
 
   handleChange = e => {
@@ -20,35 +21,23 @@ class App extends Component {
       this.state.value
     }`;
 
-    fetch(API, {
-      mode: "no-cors",
-      ContentType: "application/json",
-      headers: {
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET",
-        "Access-Control-Allow-Headers": "application/json"
-      }
-    })
-      .then(resp => {
-        if (resp.ok) return resp;
-        throw new Error("Error");
-      })
-      .then(resp => resp.json())
-      .then(({ results }) => {
-        this.setState(prev => ({
-          name: results[0].name,
-          gender: results[0].gender,
-          img: results[0].image,
-          status: results[0].status,
-          id: results[0].id
-        }));
-      })
-      .catch(err =>
-        this.setState(prevState => ({
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", API, true);
+    xhr.send(null);
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        const data = JSON.parse(xhr.response);
+        this.setState({
+          err: false,
+          name: data.results[0].name,
+          img: data.results[0].image
+        });
+      } else {
+        this.setState({
           err: true
-        }))
-      );
+        });
+      }
+    };
   };
 
   render() {
