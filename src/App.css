@@ -1,33 +1,65 @@
-.App {
-  text-align: center;
+:root {
+  --navHeight: 50px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div.App {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  flex-basis: var(--navHeight);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  flex-grow: 1;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+
+main aside {
+  flex-basis: 50px;
+  border: 1px solid #e8e8e8;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+}
+
+aside a {
+  flex-basis: 10%;
+  width: 10vh;
+  text-align: center;
+  font-size: 30px;
+  line-height: 10vh;
+  border-bottom: 1px solid #e8e8e8;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #1f1e1c;
+}
+
+aside a:hover {
+  background-color: #e8e8e8;
+}
+
+main section {
+  flex-grow: 1;
+  border: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+}
+
+main section h1 {
+  flex-basis: 8%;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 8vh;
+  border-bottom: 1px solid #e8e8e8;
+}
+div.content {
+  flex-basis: 92%;
 }
