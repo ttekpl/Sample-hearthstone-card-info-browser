@@ -7,14 +7,21 @@ main.content {
 .content h1 {
   border: 1px solid #e8e8e8;
   width: 100%;
+  padding: 20px;
 }
 .content img {
-  flex-basis: 50%;
-  margin: 0 auto;
-  max-width: 100%;
+  width: 20%;
+  min-width: 250px;
+  margin: 0 10%;
 }
-
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .content h2 {
   border: 1px solid #e8e8e8;
-  width: 100%;
+  width: 30%;
+  padding: 20px;
+  font-size: 20px;
 }
