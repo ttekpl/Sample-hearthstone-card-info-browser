@@ -62,4 +62,5 @@ main section h1 {
 }
 div.content {
   flex-basis: 92%;
+  padding: 50px 100px;
 }

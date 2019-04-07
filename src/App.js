@@ -17,25 +17,30 @@ class App extends Component {
   };
 
   handleSubmit = () => {
-    const API = `https://rickandmortyapi.com/api/character/?name=${
+    const API = `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/search/${
       this.state.value
     }`;
 
     const xhr = new XMLHttpRequest();
     xhr.open("GET", API, true);
+    xhr.setRequestHeader(
+      "X-RapidAPI-Host",
+      "omgvamp-hearthstone-v1.p.rapidapi.com"
+    );
+    xhr.setRequestHeader(
+      "X-RapidAPI-Key",
+      "1af4269631msh1f4ef5670b6b82ap1ce791jsnb1e9f4305432"
+    );
+
     xhr.send(null);
     xhr.onload = () => {
       if (xhr.status === 200) {
-        const data = JSON.parse(xhr.response);
+        const card = JSON.parse(xhr.response)[0];
         this.setState({
           err: false,
-          name: data.results[0].name,
-          img: data.results[0].image
+          card
         });
       } else {
-        this.setState({
-          err: true
-        });
       }
     };
   };

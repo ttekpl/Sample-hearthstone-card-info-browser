@@ -4,7 +4,7 @@ import "../styles/SearchBar.css";
 const SearchBar = props => {
   return (
     <nav>
-      <h1>Rick and Morty Data</h1>
+      <h1>HearthStone Data</h1>
       <h1 className="description">Search </h1>
 
       <form onSubmit={props.onSubmit}>
