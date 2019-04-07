@@ -2,14 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100vw;
-}
-body {
-  max-height: 100vh;
 }
 h1,
 h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: "Raleway", sans-serif;
+  text-align: center;
 }

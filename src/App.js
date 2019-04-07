@@ -69,11 +69,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar onChange={this.handleChange} onSubmit={this.handleSubmit} />
-        <main>
-          <section>
-            <Wrap data={this.state} />
-          </section>
-        </main>
+        <Wrap data={this.state} />
       </div>
     );
   }

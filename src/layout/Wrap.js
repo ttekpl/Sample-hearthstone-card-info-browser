@@ -1,28 +1,25 @@
 import React from "react";
+import "../styles/Wrap.css";
 
 const Wrap = ({ data }) => {
   return (
-    <>
+    <main className="content">
       <h1>Overview</h1>
-      <div className="content">
-        {data.err && data.species ? null : (
-          <>
-            <img src={data.img} alt="" />
-            <h2>Card name: {data.name}</h2>
-            <h2>Attack: {data.attack}</h2>
-            <h2>Rarity{data.rarity}</h2>
-            <h2>{data.status}</h2>
-          </>
-        )}
-        {data.err && data.dimesnsion ? null : (
-          <>
-            <h2>{data.name}</h2>
-            <h2>{data.type}</h2>
-            <h2>{data.dimesnsion}</h2>
-          </>
-        )}
-      </div>
-    </>
+      {data.err ? null : (
+        <>
+          <img src={data.img} alt="" />
+          <h2>Card name: {data.name}</h2>
+          <h2>Attack: {data.attack}</h2>
+          <h2>Cost: {data.cost} Mana</h2>
+          <h2>Health: {data.health}</h2>
+          <h2>Rarity: {data.rarity}</h2>
+          <h2>Text: {data.text}</h2>
+          <h2>Class: {data.playerClass}</h2>
+          <h2>Type: {data.type}</h2>
+          <h2>Elite: {data.elite}</h2>
+        </>
+      )}
+    </main>
   );
 };
 
