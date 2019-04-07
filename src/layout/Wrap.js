@@ -8,9 +8,9 @@ const Wrap = ({ data }) => {
         {data.err && data.species ? null : (
           <>
             <img src={data.img} alt="" />
-            <h2>{data.name}</h2>
-            <h2>{data.origin}</h2>
-            <h2>{data.species}</h2>
+            <h2>Card name: {data.name}</h2>
+            <h2>Attack: {data.attack}</h2>
+            <h2>Rarity{data.rarity}</h2>
             <h2>{data.status}</h2>
           </>
         )}

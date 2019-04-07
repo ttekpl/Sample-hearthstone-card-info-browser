@@ -36,11 +36,31 @@ class App extends Component {
     xhr.onload = () => {
       if (xhr.status === 200) {
         const card = JSON.parse(xhr.response)[0];
+        console.log(card);
+
         this.setState({
           err: false,
-          card
+          attack: card.attack,
+          id: card.id,
+          cardSet: card.cardSet,
+          cost: card.cost,
+          elite: card.elite,
+          health: card.health,
+          img: card.img,
+          imgGold: card.imgGold,
+          name: card.name,
+          playerClass: card.playerClass,
+          rarity: card.rarity,
+          text: card.text,
+          type: card.type
         });
       } else {
+        //------------------ Another reguest--------------------------------------------------------
+
+        //------------------ End of reguest--------------------------------------------------------
+        this.setState({
+          err: true
+        });
       }
     };
   };
