@@ -16,7 +16,8 @@ class App extends Component {
     });
   };
 
-  handleSubmit = () => {
+  handleSubmit = e => {
+    e.preventDefault();
     const API = `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/search/${
       this.state.value
     }`;

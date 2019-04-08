@@ -4,12 +4,14 @@ import "../styles/Wrap.css";
 const Wrap = ({ data }) => {
   return (
     <main className="content">
-      <h1>Overview</h1>
+      <h1>{data.err ? null : "Overview"}</h1>
       {data.err ? null : (
         <>
           <div className="wrapper">
             <img src={data.img} alt="" />
             <img src={data.imgGold} alt="" />
+          </div>
+          <div className="gridh2">
             <h2>Card name: {data.name}</h2>
             <h2>Attack: {data.attack}</h2>
             <h2>Cost: {data.cost} Mana</h2>
