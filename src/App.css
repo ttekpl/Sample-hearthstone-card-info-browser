@@ -20,3 +20,15 @@ main.content {
   min-height: calc(100vh - var(--navHeight));
   padding-top: var(--navHeight);
 }
+
+@media (max-width: 800px) {
+  :root {
+    --navHeight: 100px;
+  }
+}
+
+@media (max-width: 750px) {
+  main.content {
+    padding-top: calc(2 * var(--navHeight));
+  }
+}
